@@ -22,6 +22,20 @@ Thank you for considering contributing to the Laravel framework! The contributio
 
 If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
 
-### License
+## Installation
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+echo # timeattd >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:hew86i/timeattd.git
+git push -u origin master
+
+…or push an existing repository from the command line
+
+git remote add origin git@github.com:hew86i/timeattd.git
+git push -u origin master
+
+…or import code from another repository
+
+You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
