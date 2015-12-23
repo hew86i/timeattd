@@ -7,7 +7,7 @@
 	<title>ZK TAtt</title>
 
 	{{-- pace.min.js --}}
-	<script src="{{ URL::asset('js/pace.min.js')}}"></script>
+	<script data-pace-options='{ "ajax": false }' src="{{ URL::asset('js/pace.min.js')}}"></script>
 
 	{{-- Bootstrap Core CSS --}}
     <link href="{{ URL::asset('css/bootstrap-cosmo.min.css') }}" rel="stylesheet">
@@ -39,15 +39,7 @@
 
 <style>
 #wrapper {
-	visibility: hidden;
-}
-.pace {
-  -webkit-pointer-events: none;
-  pointer-events: none;
-
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
+  visibility: hidden;
 }
 
 .pace-inactive {
@@ -63,21 +55,11 @@
   width: 100%;
   height: 2px;
 }
-.pace-running #wrapper{
-    zoom:1;
-    filter:alpha(opacity=1);
-    opacity:0.01;
-}
+
 .pace-done #wrapper{
-	visibility: visible;
-    zoom:1;
-    filter:alpha(opacity=100);
-    opacity:1;
-    -webkit-transition:opacity 0.1s linear;
-    -moz-transition:opacity 0.1s linear;
-    -o-transition:opacity 0.1s linear;
-    transition:opacity 0.1s linear;
+  visibility: visible;
 }
+
 </style>
 
 <body>

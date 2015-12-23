@@ -167,6 +167,14 @@ if ($connected_device->connected == 1) {
 @section('styles')
 
 <style>
+
+	html {
+	    min-height:100%;/* make sure it is at least as tall as the viewport */
+	    position:relative;
+	}
+	body {
+	    height:100%; /* force the BODY element to match the height of the HTML element */
+	}
     .modal .modal-dialog { width: 35%; }
 
     #overlay {
@@ -190,6 +198,14 @@ if ($connected_device->connected == 1) {
 
 $(document).ready(function(){
 
+
+   $(document).ajaxStop(function () {
+        console.log('ajax stop')
+    });
+
+    $(document).ajaxStart(function () {
+        console.log('ajax start')
+    });
 	// tooltips
 	$('[data-toggle="tooltip"]').tooltip();
 
@@ -207,7 +223,7 @@ $(document).ready(function(){
 	$("#btn_connect_device").click(function(){
 
 		NProgress.configure({ parent: '#progress-connect', easing: 'ease', speed: 200});
-		NProgress.configure({ trickleRate: 0.08, trickleSpeed: 150 });
+		NProgress.configure({ trickleRate: 0.09, trickleSpeed: 200 });
 		NProgress.configure({ showSpinner: false });
 		$('#progress-connect').show();
 
@@ -246,13 +262,12 @@ $(document).ready(function(){
 	        type: 'GET',
 	        url: 'api/get/record/',
 	        beforeSend: function() { $('#overlay').show(); $('#progress-sync').show(); },
-	        complete: function() {  },
 	        success: function(data) {
 	            logs = data;
-	            console.log(data.length/760);
+	            // console.log(data.length/760);
 	            time = (data.length/760)*1000;
 	            setTackle = (0.01*(20000/time)).toFixed(2);
-	            console.log(setTackle);
+	            // console.log(setTackle);
 			    $.ajax({
 			    	type: 'POST',
 			    	url: '/db/store/logs/all',
@@ -263,7 +278,7 @@ $(document).ready(function(){
 			    		NProgress.done(true);
 			    		NProgress.start();
 			    		NProgress.configure({ minimum: 0.01 });
-	            		NProgress.configure({ trickleRate: setTackle, trickleSpeed: 320 });
+	            		NProgress.configure({ trickleRate: 0.03, trickleSpeed: 320 });
 	            	},
 			    	complete: function() {
 			    		// $('#overlay').hide();
@@ -306,7 +321,7 @@ $(document).ready(function(){
 									complete: function() {
 							    		$('#overlay').hide();
 							    		$('#progress-sync h4').html('&nbsp;');
-							    		NProgress.done(true);
+							    		// NProgress.done(true);
 							    	},
 							    	success: function(data) {
 							    		console.log(data);
