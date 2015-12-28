@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Connected extends Model
 {
-	protected $table = 'connected';
+    protected $table = 'connected';
 
     protected $fillable = ['ip_address', 'device_id', 'connected'];
 
-	public $timestamps = true;
+    public $timestamps = true;
 }

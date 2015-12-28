@@ -14,8 +14,7 @@
 
 {{-- nprogress.js --}}
 <script src="{{ URL::asset('js/nprogress/nprogress.js')}}"></script>
-{{-- footable.js --}}
-{{-- <script src="{{ URL::asset('js/footable/footable.min.js')}}"></script> --}}
+
 {{-- bootstrap-table.js --}}
 <script src="{{ URL::asset('js/bootstrap-table/bootstrap-table.min.js')}}"></script>
 <script src="{{ URL::asset('js/bootstrap-table/bootstrap-table-mk-MK.js')}}"></script>
@@ -27,8 +26,6 @@
 {{-- bootstrap-datepicker --}}
 <script src="{{ URL::asset('js/bootstrap-datepicker/bootstrap-datetimepicker.js')}}"></script>
 {{-- <script src="{{ URL::asset('js/bootstrap-datepicker/bootstrap-datepicker.mk.min.js')}}"></script> --}}
-
-
 
 {{-- setup meta token for ajax requests --}}
 <script type="text/javascript">

@@ -66,7 +66,7 @@ Route::get('/tad', function () {
     $options = ['ip' => '192.168.0.201', 'udp_port' => 4370, 'connection_timeout' => 2];
     $zk = new TADPHP\Providers\TADZKLib($options);
 
-// return $zk->get_commands_available();
+    return $zk->get_commands_available();
     $zk->connect();
 // dd(hex2bin("70"));
     return $zk->send_command_to_device(31, 'aa');
@@ -88,6 +88,21 @@ Route::get('/tt', function () {
     $tadf = new TADPHP\TADFactory(['ip' => '192.168.0.201']);
     $tad = $tadf->get_instance();
 
-    return $all_user_info = $tad->get_all_user_info()->to_json();
+    return $fs = $tad->get_free_sizes()->to_array();
 
+});
+
+// ZKCLI DEMO
+
+Route::get('zkcli', function () {
+    $zk = new App\Zkaccess\ZKCLI();
+    $zk->run();
+});
+
+// ZKCOM Demo
+Route::get('zkcom', function () {
+    //$zk = new App\Zkaccess\ZKCOM();
+    $zk = new zkcom();
+    // dd($zk);
+    $zk->init();
 });

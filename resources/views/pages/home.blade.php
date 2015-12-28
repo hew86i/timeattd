@@ -17,10 +17,12 @@
 		</ul>
 	</div>
 </h1>
-	<h4>
-		<span>Статус на уредот: </span>
-		<span id='device_status' class='alert-danger'> <strong>&nbsp;Offline&nbsp;</strong> </span>
-	</h4>
+
+<h4>
+	<span>Статус на уредот: </span>
+	<span id='device_status' class='alert-danger'> <strong>&nbsp;Offline&nbsp;</strong> </span>
+</h4>
+
 <div class="progress-container row">
 	<div class="col-lg-6">
 		<div id="progress-connect"><h4 class="pull-right">&nbsp;</h4></div>
@@ -166,19 +168,25 @@ if ($connected_device->connected == 1) {
 
 @section('styles')
 
-<style>
+	<style>
 
 	html {
-	    min-height:100%;/* make sure it is at least as tall as the viewport */
-	    position:relative;
+	    min-height: 100%;
+	    /* make sure it is at least as tall as the viewport */
+	    position: relative;
 	}
-	body {
-	    height:100%; /* force the BODY element to match the height of the HTML element */
-	}
-    .modal .modal-dialog { width: 35%; }
 
-    #overlay {
-		background-color: rgba(0, 0, 0, 0.2);
+	body {
+	    height: 100%;
+	    /* force the BODY element to match the height of the HTML element */
+	}
+
+	.modal .modal-dialog {
+	    width: 35%;
+	}
+
+	#overlay {
+	    background-color: rgba(0, 0, 0, 0.2);
 	    z-index: 500;
 	    position: absolute;
 	    left: 0;
@@ -187,8 +195,7 @@ if ($connected_device->connected == 1) {
 	    height: 100%;
 	    display: none;
 	}
-
-</style>
+	</style>
 
 @endsection
 
@@ -337,8 +344,7 @@ $(document).ready(function(){
 
 
 		// $('#progress-sync').hide();
-	})
-
+	});
 
 	/**
 	 * FORM Validation using jQuery plugin
@@ -431,8 +437,6 @@ $(document).ready(function(){
 	});
 
 });
-
-
 
 </script>
 
