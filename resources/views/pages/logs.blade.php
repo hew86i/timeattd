@@ -5,6 +5,7 @@
 <div class="container">
 
 	<div class="row">
+		{{$zk->init()}}
 		<div class="col-xs-3">
 			<form class="form-horizontal">
 		            <div class="form-group form-group-sm">

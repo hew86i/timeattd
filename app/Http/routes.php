@@ -92,17 +92,9 @@ Route::get('/tt', function () {
 
 });
 
-// ZKCLI DEMO
-
-Route::get('zkcli', function () {
-    $zk = new App\Zkaccess\ZKCLI();
-    $zk->run();
-});
-
 // ZKCOM Demo
 Route::get('zkcom', function () {
-    //$zk = new App\Zkaccess\ZKCOM();
     $zk = new zkcom();
-    // dd($zk);
     $zk->init();
+    // $zk->RestartDevice();
 });

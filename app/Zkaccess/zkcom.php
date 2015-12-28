@@ -1,6 +1,9 @@
 <?php
 
+namespace App\Zkaccess;
+
 use App\Connected;
+use COM;
 
 /**
  * test
@@ -11,7 +14,9 @@ class zkcom
     private $zkcom;
     private $connected_device;
 
-    public function __construct()
+    private $machineNumber;
+
+    public function __construct($machineNumber = 1)
     {
 
         $this->zkcom = new COM("zkemkeeper.ZKEM");
@@ -33,6 +38,16 @@ class zkcom
 
         echo $ip_addr . " " . $mac;
 
-        dd($this->zkcom);
+        // dd($this->zkcom);
+    }
+
+    public function RestartDevice()
+    {
+        $this->zkcom->RestartDevice(1);
+    }
+
+    public function __destruct()
+    {
+        $this->zkcom->Disconnect();
     }
 }

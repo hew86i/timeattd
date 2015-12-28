@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Connected;
 use App\Device;
 use App\Http\Controllers\Controller;
+use App\Zkaccess\zkcom;
 
 class PagesController extends Controller
 {
@@ -31,7 +32,8 @@ class PagesController extends Controller
 
     public function logs()
     {
-        return view("pages.logs");
+        $zk = new zkcom();
+        return view("pages.logs", compact('zk'));
     }
 
 }
